@@ -80,10 +80,10 @@ Task PackageRestore -Depends CleanPackages {
     mkdir $SolutionOutputDir > $null
   }
 
-  #exec { &$Nuget restore $PackagesConfig -OutputDirectory $PackagesDir }
+  exec { &$Nuget restore $PackagesConfig -OutputDirectory $PackagesDir }
   exec { &$Nuget install PowerShellRoutes -OutputDirectory $BasePath -ExcludeVersion }
   #exec { &$Nuget Install Newtonsoft.Json -Pre -OutputDirectory $PackagesDir } #-Version 6.0.4
-  exec { &$Nuget install TrelloNet -OutputDirectory $PackagesDir } #-Version 0.6.2
+  #exec { &$Nuget install TrelloNet -OutputDirectory $PackagesDir } #-Version 0.6.2
 
   $TargetFramework = [Nuget.VersionUtility]::DefaultTargetFramework
 
