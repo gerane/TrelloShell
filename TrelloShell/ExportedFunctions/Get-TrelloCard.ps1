@@ -42,4 +42,5 @@ function Get-TrelloCard {
     Invoke-TrelloObjectMethod -Object $Trello.Cards -Name $PSCmdlet.ParameterSetName -Parameters $PSBoundParameters | where -FilterScript $WhereScript
   }
 }
-Export-ModuleMember -Function Get-TrelloCard
+Export-ModuleMember -Function Get-TrelloCard 
+#Invoke-TrelloObjectMethod -Object $Trello.Cards -Name "Trello Powershell integration"
